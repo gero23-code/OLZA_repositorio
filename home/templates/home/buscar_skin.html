@@ -1,0 +1,14 @@
+
+
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1>buscador de skins</h1>
+    <form action="{% url 'buscar_skin' %}" method="POST">
+        {% csrf_token %}
+
+
+        {{formulario}}
+
+        <button>Buscar</button>
+{% endblock contenido %}

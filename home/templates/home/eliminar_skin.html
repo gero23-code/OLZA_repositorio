@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1>Eliminar {{skin}}</h1>
+<form action="{% url 'eliminar_skin' skin.id %}" method="POST">
+    {% csrf_token %}
+    <p>¿Confirmar eliminacion?</p>
+    <button>Confirmar</button>
+</form>
+{% endblock contenido %}

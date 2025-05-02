@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+
+{% block contenido %}
+<h1>Listado de skins</h1>
+
+{% if skins %}
+<ul>
+    {% for skin in skins %}
+    
+    <li>
+        {{skin}} 
+        | <a href={% url "detalle_skins" skin.id %}>Ver mas</a> 
+        | <a href={% url "modificar_skin" skin.id %}>Modificar</a>
+        | <a href={% url "eliminar_skin" skin.id %}>Eliminar</a>
+    </li>
+    
+    {% endfor %}    
+</ul>
+{% else %}
+<p>No hay skins agregadas.</p>
+{% endif %}
+{% endblock contenido %}
